@@ -37,55 +37,120 @@
             </a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link" href="#">Хочу сюда!</a>
-            <span class="visually-hidden">
-              Бронирование
-            </span>
+            <a class="navigation-link" href="#">Хочу сюда!
+              <span class="visually-hidden">
+                Бронирование
+              </span>
+            </a>
           </li>
         </ul>
       </nav>
     </header>
 
-    <main class="main-index">
+    <main class="main-inner">
+      <header class="inner-header">
+        <h1 class="inner-header-title">Гостиницы Седоны</h1>
+        <ul class="breadcrumbs">
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link" href="index.html">Главная</a>
+          </li>
+          <li class="breadcrumbs-item">
+            <a class="breadcrumbs-link">Каталог</a>
+          </li>
+        </ul>
+      </header>
 
-      <section class="hero">
-        <h1 class="visually-hidden">Welcome to the gorgeous Sedona "Because the Grand Canyon sucks!"</h1>
-        <img class="hero-logo" src="#" alt="Баннер добро пожаловать в Седону">
-      </section>
+      <section class="catalog-products">
+        <h2 class="visually-hidden">Список гостиниц с фильтрами</h2>
+        <form class="catalog-filter" action="https://echo.htmlacademy.ru/" method="get">
+          <fieldset class="catalog-filter-group">
+            <legend class="catalog-filter-title">Инфраструктура</legend>
+            <ul class="catalog-filter-list">
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="swimming-pool" checked>
+                  Бассейн
+                </label>
+              </li>
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="parking" checked>
+                  Парковка
+                </label>
+              </li>
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="checkbox" name="wi-fi">
+                  Wi-Fi
+                </label>
+              </li>
+            </ul>
+          </fieldset>
 
+          <fieldset class="catalog-filter-group">
+            <legend class="catalog-filter-title">Тип жилья</legend>
+            <ul class="catalog-filter-list">
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="radio" name="product-group" value="hotel" checked>
+                  Гостиница
+                </label>
+              </li>
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="radio" name="product-group" value="motel">
+                  Мотель
+                </label>
+              </li>
+              <li class="catalog-filter-item">
+                <label class="control">
+                  <input class="control-input" type="radio" name="product-group" value="apartments">
+                  Апартаменты
+                </label>
+              </li>
+            </ul>
+          </fieldset>
 
+          <button class="button" type="submit">Применить</button>
+          <button class="button" type="reset">Сбросить</button>
+        </form>
 
     </main>
     <footer class="main-footer catalog">
-      <h2>Подпишитесь на рассылку</h2>
-      <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
-      <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
-        <label class="form-label" for="E-mail">
-          <input type="text" id="E-mail" name="E-mail" placeholder="Ваш e-mail">
-        </label>
-        <button class="button" type="submit">Подписаться</button>
-      </form>
-      <ul>
-        <li>
-          <ul class="social-list">
-            <li class="social-item">
-              <a href="#"><img src="#" alt="VK"></a>
-            </li>
-            <li class="social-item">
-              <a href="#"><img src="#" alt="Telegram"></a>
-            </li>
-            <li class="social-item">
-              <a href="#"><img src="#" alt="YouTube"></a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a class="phone" href="tel:88128121212">+7 (812) 812-12-12</a>
-        </li>
-        <li>
-          <a class="academy" href="htmlacademy.ru"><img src="#" alt="html academy"></a>
-        </li>
-      </ul>
+      <section class="footer-subscribe">
+        <h2>Подпишитесь на рассылку</h2>
+        <p>Только полезная информация и никакого спама, честное бойскаутское!</p>
+        <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
+          <label class="form-label" for="E-mail">
+            <input type="text" id="E-mail" name="E-mail" placeholder="Ваш e-mail">
+          </label>
+          <button class="button" type="submit">Подписаться</button>
+        </form>
+      </section>
+
+      <section class="footer-contacts">
+        <ul>
+          <li>
+            <ul class="social-list">
+              <li class="social-item">
+                <a href="#"><img src="#" alt="VK"></a>
+              </li>
+              <li class="social-item">
+                <a href="#"><img src="#" alt="Telegram"></a>
+              </li>
+              <li class="social-item">
+                <a href="#"><img src="#" alt="YouTube"></a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="phone" href="tel:88128121212">+7 (812) 812-12-12</a>
+          </li>
+          <li>
+            <a class="academy" href="htmlacademy.ru"><img src="#" alt="html academy"></a>
+          </li>
+        </ul>
+      </section>
     </footer>
 
   </body>
