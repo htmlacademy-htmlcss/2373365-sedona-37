@@ -32,6 +32,7 @@
 
 body {
     margin: 0;
+    padding: 0;
     font-family: "PT Sans", sans-serif;
     font-size: 16px;
     line-height: 24px;
@@ -41,6 +42,19 @@ body {
 
 .visually-hidden {
     visibility: hidden;
+
+        /*пока что не знаю какие тут нужны свойства, погуглил, что то нашел, но лучше вперед забегать не буду
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+
+    что то вроде этого, но в таком случае иконки поиска и избранного в хедере обрезаются, ну и не только в хедере. я думаю надо добавить дополнительный псевдоэлемент с другим классом и для него делать бэкграунд, но пока что не понимаю как это сделать грамотно, прошу разъяснить этот момент)
+  */
 }
 
 .list {
@@ -55,23 +69,26 @@ body {
     color: #000000;
 }
 
-.navigation-user .search {
+.navigation-item .navigation-button {
+    background-repeat: no-repeat;
+    background-size: 18px;
+    border-style: none;
+    background-color: #FFFFFF;
+}
+
+.navigation-item .search {
     background-image: url("../images/icons/search.svg");
     background-repeat: no-repeat;
-    background-size: 18px;
-    border-style: none;
-    background-color: #FFFFFF;
+
 }
 
-.navigation-user .favourite {
+.navigation-item .favourite {
     background-image: url("../images/icons/heart.svg");
     background-repeat: no-repeat;
-    background-size: 18px;
-    border-style: none;
-    background-color: #FFFFFF;
+
 }
 
-.navigation-user .button {
+.navigation-item .button {
     font-family: inherit;
     font-size: 16px;
     line-height: 20px;
@@ -91,6 +108,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
+    background-color: #000000;
 }
 
 .hero-logo {
@@ -144,22 +162,24 @@ body {
     background-color: #83B3D333;
 }
 
+.features-item {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .features-living {
     background-image: url("../images/icons/features-living.svg");
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .features-food {
     background-image: url("../images/icons/features-food.svg");
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .features-gift {
     background-image: url("../images/icons/features-gift.svg");
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .search-hotel .link {
@@ -180,6 +200,9 @@ body {
     background-size: 100% auto;
     color: #FFFFFF;
     background-color: #000000;
+    width: 1200px;
+    background-position: center;
+
 }
 
 .footer-index .text {
@@ -311,15 +334,18 @@ body {
 
 .button-cards {
     background-image: url("../images/icons/filter-tabs.svg");
+    background-repeat: no-repeat;
 
 }
 
 .button-full {
     background-image: url("../images/icons/filter-full.svg");
+    background-repeat: no-repeat;
 }
 
 .button-list {
     background-image: url("../images/icons/filter-list.svg");
+    background-repeat: no-repeat;
 }
 
 .product-list {
@@ -343,29 +369,26 @@ body {
     font-size: 18px;
 }
 
-.product-link {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 700;
-    color: #ffffff;
-    background-color: #756157;
-    text-transform: uppercase;
-    border: 1px solid #756157;
-    border-radius: 4px;
-    padding: 8px 26px;
-}
-
+.product-link,
 .product-button {
     font-family: inherit;
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
     color: #ffffff;
-    background-color: #82B3D3;
     text-transform: uppercase;
-    border: 1px solid #82B3D3;
     border-radius: 4px;
-    padding: 8px 20px;
+    padding: 8px 26px;
+}
+
+.product-link {
+    background-color: #756157;
+    border: 1px solid #756157;
+}
+
+.product-button {
+    background-color: #82B3D3;
+    border: 1px solid #82B3D3;
 }
 
 .product-card .active {
