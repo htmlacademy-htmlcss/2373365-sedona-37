@@ -35,6 +35,8 @@ html {
 }
 
 body {
+    display: flex;
+    min-height: 100%;
     margin: 0;
     font-family: "PT Sans", sans-serif;
     font-size: 16px;
@@ -46,7 +48,6 @@ body {
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
     width: 1200px;
     margin: 0 auto;
     background-color: #FFFFFF;
@@ -67,11 +68,37 @@ body {
     white-space: nowrap;
     width: 1px;
 
-    что то вроде этого, но в таком случае иконки поиска и избранного в хедере обрезаются, ну и не только в хедере. я думаю надо добавить дополнительный псевдоэлемент с другим классом и для него делать бэкграунд, но пока что не понимаю как это сделать грамотно, прошу разъяснить этот момент)  */
+    что то вроде этого, но в таком случае иконки поиска и избранного в хедере обрезаются, ну и не только в хедере. я думаю надо добавить дополнительный псевдоэлемент с другим классом и для него делать бэкграунд, но пока что не понимаю как это сделать грамотно, прошу разъяснить этот момент) это так же касается бэкграунда hero, если делать его из 2х составных: jpeg и белый декор svg */
 }
 
 .list {
     list-style: none;
+}
+
+.navigation {
+    display: flex;
+}
+
+.logo {
+    display: block;
+    margin-left: 70px;
+}
+
+.navigation .list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+}
+
+.navigation-list {
+    margin-left: 44px;
+    gap: 32px;
+}
+
+.navigation-user {
+    min-width: 400px;
+    margin-left: auto;
 }
 
 .navigation-link {
@@ -91,12 +118,10 @@ body {
 
 .navigation-item .search {
     background-image: url("../images/icons/search.svg");
-
 }
 
 .navigation-item .favourite {
     background-image: url("../images/icons/heart.svg");
-
 }
 
 .navigation-item .button {
@@ -127,11 +152,13 @@ body {
 }
 
 .main-index,
-.main-footer {
+.footer-index,
+.footer-inner {
     text-align: center;
 }
 
-.main-container {
+.main-index,
+.main-inner {
     flex-grow: 1;
 }
 
@@ -155,16 +182,36 @@ body {
     text-transform: uppercase;
 }
 
-.advantages-description,
-.features-description {
-    font-size: 18px;
-    line-height: 21px;
-    color: #333333;
+.advantages-list,
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.advantages-item,
+.features-item {
+    width: 400px;
+    height: 385px;
+}
+
+.advantages-item img {
+    display: block;
+}
+
+.advantages-item:nth-child(4n+1) {
+    background-color: #82B3D3;
+    display: flex;
+    width: 100%;
+}
+
+.advantages-item:last-child {
+    flex-direction: row-reverse;
 }
 
 .advantages-item:nth-child(4n+1),
 .advantages-item:nth-child(4n+1) p {
-    background-color: #82B3D3;
     color: #FFFFFF;
 }
 
@@ -175,6 +222,13 @@ body {
 
 .advantages-item:nth-child(3) {
     background-color: #83B3D333;
+}
+
+.advantages-description,
+.features-description {
+    font-size: 18px;
+    line-height: 21px;
+    color: #333333;
 }
 
 .features-item {
@@ -209,7 +263,7 @@ body {
     padding: 8px 50px;
 }
 
-.footer-index {
+.index-subscribe {
     background-image: url("../images/subscribe-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -219,8 +273,13 @@ body {
 
 }
 
-.footer-index .text {
+.index-subscribe .text {
     color: #FFFFFF;
+}
+
+.appointment-form {
+    display: flex;
+    justify-content: center;
 }
 
 .appointment-form .button {
@@ -254,6 +313,33 @@ body {
     line-height: 40px;
     color: #000000;
 }
+
+.contacts-list,
+.social-list {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.social-list {
+    width: 142px;
+    margin-left: 70px;
+}
+
+.contacts-item:nth-child(even) {
+    width: 720px;
+    justify-self: center;
+}
+
+.contacts-item:last-child {
+    width: 115px;
+    margin-left: auto;
+    margin-right: 70px;
+}
+
+
+/* catalog */
+
 
 .header-container {
     background-image: url("../images/filter-background.jpg");
