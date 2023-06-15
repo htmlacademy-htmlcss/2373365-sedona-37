@@ -61,7 +61,7 @@
                   </span></a>
               </li>
               <li class="breadcrumbs-item" href="#">
-                <div class="visually-hidden">Стрелка</div>
+                <span class="visually-hidden">Стрелка</span>
               </li>
               <li class="breadcrumbs-item" href="#">
                 <a class="link breadcrumbs-link">Гостиницы</a>
@@ -98,7 +98,7 @@
 
               <fieldset class="catalog-group">
                 <legend class="catalog-title">Тип жилья:</legend>
-                <ul class="list">
+                <ul class="list catalog-list">
                   <li class="catalog-item">
                     <label class="control">
                       <input class="control-input" type="radio" name="product-group" value="hotel" checked>
@@ -120,37 +120,43 @@
                 </ul>
               </fieldset>
 
-              <fieldset class="catalog-group">
+              <fieldset class="catalog-group price-range">
                 <legend class="catalog-title">Стоимость, ₽:</legend>
+
                 <span class="catalog-fromto">от</span>
-                <input class="catalog-price price-min" type="text" value="0" />
+                <input class="catalog-price price-min" type="text" value="0">
                 <span class="catalog-fromto">до</span>
-                <input class="catalog-price price-max" type="text" value="9000" />
+                <input class="catalog-price price-max" type="text" value="9000">
                 <input class="slider" type="range" min="0" max="15000" value="9000">
               </fieldset>
-
-              <button class="button button-submit" type="submit">Применить</button>
-              <button class="button button-reset" type="reset">Сбросить</button>
+              <div class="catalog-buttons">
+                <button class="button button-submit" type="submit">Применить</button>
+                <button class="button button-reset" type="reset">Сбросить</button>
+              </div>
             </form>
           </section>
         </div>
 
         <section class="catalog-products">
-          <h2 class="title catalog-title">Найдено гостиниц: <output>38</output></h2>
-          <select class="select-control" aria-label="Сортировка">
-            <option value="cheap" selected>Сначала дешёвое</option>
-            <option value="popular">Сначала популярное</option>
-            <option value="expensive">Сначала дорогое</option>
-          </select>
-          <button class="button button-cards button-light" type="button">
-            <span class="visually-hidden">Показать карточки</span>
-          </button>
-          <button class="button button-full" type="button">
-            <span class="visually-hidden">Показать подробно</span>
-          </button>
-          <button class="button button-list" type="button">
-            <span class="visually-hidden">Показать список</span>
-          </button>
+          <div class="catalog-sorting">
+            <h2 class="title catalog-title">Найдено гостиниц: <output>38</output></h2>
+            <select class="select-control" aria-label="Сортировка">
+              <option value="cheap" selected>Сначала дешёвое</option>
+              <option value="popular">Сначала популярное</option>
+              <option value="expensive">Сначала дорогое</option>
+            </select>
+            <div class="catalog-view">
+              <button class="button button-cards button-light" type="button">
+                <span class="visually-hidden">Показать карточки</span>
+              </button>
+              <button class="button button-full" type="button">
+                <span class="visually-hidden">Показать подробно</span>
+              </button>
+              <button class="button button-list" type="button">
+                <span class="visually-hidden">Показать список</span>
+              </button>
+            </div>
+          </div>
 
           <ul class="list product-list">
             <li class="product-card">

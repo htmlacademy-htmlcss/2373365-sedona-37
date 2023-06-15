@@ -340,7 +340,6 @@ body {
 
 /* catalog */
 
-
 .header-container {
     background-image: url("../images/filter-background.jpg");
     background-repeat: no-repeat;
@@ -348,12 +347,21 @@ body {
     background-position: center;
     color: #FFFFFF;
     background-color: #000000;
+    padding: 70px;
+    padding-top: 35px;
 }
 
 .inner-title {
     font-size: 60px;
     line-height: 78px;
     font-weight: 700;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    /*align-items: baseline;*/
 }
 
 .breadcrumbs-index {
@@ -364,6 +372,33 @@ body {
 .breadcrumbs-item:nth-child(2) {
     background-image: url("../images/icons/arrow.svg");
     background-repeat: no-repeat;
+}
+
+.catalog-form {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+.catalog-group {
+    padding: 0;
+    margin: 0;
+    border-style: none;
+}
+
+.catalog-list {
+    padding: 0;
+    margin: 0;
+    width: 150px;
+}
+
+/*
+.price-range {
+    /*width: 288px;*/
+    /*пока оставлю до лучших времен) рано полез сюда видимо*/
+
+.catalog-price {
+    width: 143px;
 }
 
 .catalog-form .catalog-title {
@@ -393,6 +428,12 @@ body {
     text-transform: uppercase;
 }
 
+.catalog-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
 .catalog-form .button {
     color: #FFFFFF;
     font-family: inherit;
@@ -419,9 +460,11 @@ body {
     padding: 14px 131px 14px 20px;
     border-radius: 4px;
     border-color: #E5E5E5;
+    margin-left: 200px;
+    width: 292px;
 }
 
-.catalog-products .button {
+.catalog-sorting .button {
     background-repeat: no-repeat;
     background-position: center;
     width: 48px;
@@ -430,6 +473,18 @@ body {
     background-color: #FFFFFF;
     border-color: #E5E5E5;
     box-shadow: none;
+}
+
+.catalog-sorting {
+    display: flex;
+    margin-left: 70px;
+    align-items: center;
+}
+
+.catalog-view {
+    display: flex;
+    margin-left: 70px;
+    gap: 8px;
 }
 
 .button-cards {
