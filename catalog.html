@@ -61,9 +61,6 @@
                   </span></a>
               </li>
               <li class="breadcrumbs-item" href="#">
-                <span class="visually-hidden">Стрелка</span>
-              </li>
-              <li class="breadcrumbs-item" href="#">
                 <a class="link breadcrumbs-link">Гостиницы</a>
               </li>
             </ul>
@@ -97,7 +94,7 @@
               </fieldset>
 
               <fieldset class="catalog-group">
-                <legend class="catalog-title">Тип жилья:</legend>
+                <legend class="title catalog-title">Тип жилья:</legend>
                 <ul class="list catalog-list">
                   <li class="catalog-item">
                     <label class="control">
@@ -120,15 +117,28 @@
                 </ul>
               </fieldset>
 
-              <fieldset class="catalog-group price-range">
-                <legend class="catalog-title">Стоимость, ₽:</legend>
-
-                <span class="catalog-fromto">от</span>
-                <input class="catalog-price price-min" type="text" value="0">
-                <span class="catalog-fromto">до</span>
-                <input class="catalog-price price-max" type="text" value="9000">
-                <input class="slider" type="range" min="0" max="15000" value="9000">
+              <fieldset class="catalog-group price-filter">
+                <legend class="title catalog-title">Стоимость, ₽:</legend>
+                <div class="fieldset-wrapper">
+                  <div class="fieldset-inputs">
+                    <input class="price-from" type="number" placeholder="цена от"
+                      aria-label="введите минимальную стоимость" maxlength="5" value="0" step="100" min="0">
+                    <input class="price-to" type="number" placeholder="цена до"
+                      aria-label="введите максимальную стоимость" maxlength="5" value="9000" step="100" min="100">
+                  </div>
+                  <div class="price-range">
+                    <button class="button price-button" type="button"><span class="visually-hidden">установить
+                        минимальную стоимость</span>
+                    </button>
+                    <button class="button price-button" type="button"><span class="visually-hidden">установить
+                        максимальную стоимость</span>
+                      <span class="range-line"></span>
+                      <span class="range-line"></span>
+                    </button>
+                  </div>
+                </div>
               </fieldset>
+
               <div class="catalog-buttons">
                 <button class="button button-submit" type="submit">Применить</button>
                 <button class="button button-reset" type="reset">Сбросить</button>
@@ -167,10 +177,10 @@
               <p class="product-price">От 4000 ₽</p>
               <a class="link product-link" href="#">Подробнее</a>
               <button class="product-button" type="button">В избранное</button>
-              <p class="stars star-4">
+              <p class="product-stars star-4">
                 <span class="visually-hidden">4 звезды</span>
               </p>
-              <p class="rate">Рейтинг: 8,5</p>
+              <p class="product-rate">Рейтинг: 8,5</p>
             </li>
             <li class="product-card">
               <img class="product-image" src="images/hotel-2.jpg" width="300" height="212"
@@ -180,10 +190,10 @@
               <p class="product-price">От 5000 ₽</p>
               <a class="link product-link" href="#">Подробнее</a>
               <button class="product-button active" type="button">В избранном</button>
-              <p class="stars star-4">
+              <p class="product-stars star-4">
                 <span class="visually-hidden">4 звезды</span>
               </p>
-              <p class="rate">Рейтинг: 9,2</p>
+              <p class="product-rate">Рейтинг: 9,2</p>
             </li>
             <li class="product-card">
               <img class="product-image" src="images/hotel-3.jpg" width="300" height="212"
@@ -193,10 +203,10 @@
               <p class="product-price">От 2500 ₽</p>
               <a class="link product-link" href="#">Подробнее</a>
               <button class="product-button" type="button">В избранное</button>
-              <p class="stars star-3">
+              <p class="product-stars star-3">
                 <span class="visually-hidden">3 звезды</span>
               </p>
-              <p class="rate">Рейтинг: 6,9</p>
+              <p class="product-rate">Рейтинг: 6,9</p>
             </li>
             <li class="product-card">
               <img class="product-image" src="images/hotel-4.jpg" width="300" height="212"
@@ -206,10 +216,10 @@
               <p class="product-price">От 1500 ₽</p>
               <a class="link product-link" href="#">Подробнее</a>
               <button class="product-button" type="button">В избранное</button>
-              <p class="stars star-2">
+              <p class="product-stars star-2">
                 <span class="visually-hidden">2 звезды</span>
               </p>
-              <p class="rate">Рейтинг: 5,0</p>
+              <p class="product-rate">Рейтинг: 5,0</p>
             </li>
           </ul>
 

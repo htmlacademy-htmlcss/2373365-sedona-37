@@ -56,48 +56,54 @@ body {
 }
 
 .visually-hidden {
-    visibility: hidden;
-
-    /*пока что не знаю какие тут нужны свойства, погуглил, что то нашел, но лучше вперед забегать не буду
-
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
     position: absolute;
-    white-space: nowrap;
     width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 
-    что то вроде этого, но в таком случае иконки поиска и избранного в хедере обрезаются, ну и не только в хедере. я думаю надо добавить дополнительный псевдоэлемент с другим классом и для него делать бэкграунд, но пока что не понимаю как это сделать грамотно, прошу разъяснить этот момент) это так же касается бэкграунда hero, если делать его из 2х составных: jpeg и белый декор svg */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 .list {
     list-style: none;
 }
 
+.link {
+    text-decoration: none;
+}
+
 .navigation {
     display: flex;
+    height: 64px;
+    width: 1060px;
+    margin-left: 70px;
 }
 
 .logo {
     display: block;
-    margin-left: 70px;
+    z-index: 1;
 }
 
 .navigation .list {
     display: flex;
-    flex-direction: row;
     align-items: center;
     padding: 0;
 }
 
 .navigation-list {
-    margin-left: 44px;
+    margin-left: 30px;
     gap: 32px;
 }
 
 .navigation-user {
-    min-width: 400px;
     margin-left: auto;
 }
 
@@ -105,15 +111,19 @@ body {
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
-    text-decoration: none;
     color: #000000;
 }
 
-.navigation-item .navigation-button {
+.navigation-button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
     background-repeat: no-repeat;
     background-size: 18px;
-    border-style: none;
+    background-position: center;
     background-color: #FFFFFF;
+    border-style: none;
+    margin-left: auto;
 }
 
 .navigation-item .search {
@@ -125,6 +135,8 @@ body {
 }
 
 .navigation-item .button {
+    width: 162px;
+    height: 36px;
     font-family: inherit;
     font-size: 16px;
     line-height: 20px;
@@ -135,15 +147,28 @@ body {
     border: 1px solid #756157;
     border-radius: 4px;
     padding: 8px 34px;
+    margin-left: 20px;
+    box-sizing: border-box;
 }
 
 
 .hero {
-    background-image: url("../images/hero-background.jpg");
+    background-image: url("../images/hero-back-image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center bottom;
     background-color: #536873;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    height: 57px;
+    width: 100%;
+    background-image: url("../images/hero-back-divider.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
 }
 
 .hero-logo {
@@ -165,7 +190,6 @@ body {
 .title {
     font-size: 30px;
     line-height: 36px;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -178,7 +202,6 @@ body {
 .subtitle {
     font-size: 24px;
     line-height: 28px;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -192,17 +215,30 @@ body {
 
 .advantages-item,
 .features-item {
+    display: flex;
     width: 400px;
-    height: 385px;
+    min-height: 385px;
+    align-items: center;
+    justify-content: center;
 }
 
-.advantages-item img {
-    display: block;
+.advantages-content,
+.features-content {
+    width: 230px;
+}
+
+.advantages-content .subtitle {
+    margin: auto;
+    width: 175px;
+}
+
+.advantages-item:nth-child(4n+1) .advantages-content {
+    margin-right: 85px;
+    margin-left: 85px;
 }
 
 .advantages-item:nth-child(4n+1) {
     background-color: #82B3D3;
-    display: flex;
     width: 100%;
 }
 
@@ -211,7 +247,7 @@ body {
 }
 
 .advantages-item:nth-child(4n+1),
-.advantages-item:nth-child(4n+1) p {
+.advantages-item:nth-child(4n+1) .advantages-description {
     color: #FFFFFF;
 }
 
@@ -233,28 +269,24 @@ body {
 
 .features-item {
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
+    flex-direction: column;
 }
 
 .features-living {
     background-image: url("../images/icons/features-living.svg");
-    background-repeat: no-repeat;
 }
 
 .features-food {
     background-image: url("../images/icons/features-food.svg");
-    background-repeat: no-repeat;
 }
 
 .features-gift {
     background-image: url("../images/icons/features-gift.svg");
-    background-repeat: no-repeat;
 }
 
 .search-hotel .link {
-    font-size: 20px;
     line-height: 36px;
-    font-weight: 700;
     color: #ffffff;
     background-color: #756157;
     text-transform: uppercase;
@@ -304,9 +336,6 @@ body {
     border-style: none;
 }
 
-.link {
-    text-decoration: none;
-}
 
 .phone {
     font-size: 40px;
@@ -317,18 +346,29 @@ body {
 .contacts-list,
 .social-list {
     display: flex;
-    flex-direction: row;
     padding: 0;
+    align-items: center;
 }
 
 .social-list {
     width: 142px;
     margin-left: 70px;
+    gap: 27px;
+}
+
+.social-link svg {
+    display: block;
+    align-self: baseline;
+}
+
+.academy-link {
+    display: block;
+    height: 34px;
 }
 
 .contacts-item:nth-child(even) {
     width: 720px;
-    justify-self: center;
+    justify-self: end;
 }
 
 .contacts-item:last-child {
@@ -354,29 +394,42 @@ body {
 .inner-title {
     font-size: 60px;
     line-height: 78px;
-    font-weight: 700;
 }
 
 .breadcrumbs {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    /*align-items: baseline;*/
+    align-items: baseline;
 }
 
-.breadcrumbs-index {
-    background-image: url("../images/icons/home.svg");
+.breadcrumbs-item:first-child {
+    width: 12px;
+    height: 12px;
     background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("../images/icons/home.svg");
 }
 
-.breadcrumbs-item:nth-child(2) {
+.breadcrumbs-item:first-child::after {
+    content: "";
+    display: block;
     background-image: url("../images/icons/arrow.svg");
     background-repeat: no-repeat;
+    background-size: auto;
+    background-position: bottom;
+    height: 12px;
+    width: 7px;
+    margin-left: 24px;
+}
+
+.breadcrumbs-link {
+    display: block;
+    margin-left: 29px;
 }
 
 .catalog-form {
     display: flex;
-    flex-direction: row;
     gap: 70px;
 }
 
@@ -392,13 +445,9 @@ body {
     width: 150px;
 }
 
-/*
-.price-range {
-    /*width: 288px;*/
-    /*пока оставлю до лучших времен) рано полез сюда видимо*/
-
-.catalog-price {
-    width: 143px;
+.price-button {
+    width: 20px;
+    height: 20px;
 }
 
 .catalog-form .catalog-title {
@@ -406,6 +455,7 @@ body {
     line-height: 24px;
     font-weight: 700;
     text-transform: none;
+    padding: 0;
 }
 
 .control-input {
@@ -414,19 +464,36 @@ body {
     font-weight: 400;
 }
 
-.catalog-price {
+.price-filter {
+    margin-left: auto
+}
+
+.fieldset-wrapper {
+    width: 287px;
+}
+
+.fieldset-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-from,
+.price-to {
+    font-family: inherit;
     font-size: 18px;
     line-height: 24px;
     font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 260px;
+    width: 143px;
+    height: 48px;
+    background-color: #F2F2F2;
+    border-radius: 4px 0 0 4px;
 }
 
-.catalog-fromto {
-    font-size: 18px;
-    line-height: 24px;
-    font-weight: 400;
-    color: #000000;
-    text-transform: uppercase;
-}
 
 .catalog-buttons {
     display: flex;
@@ -434,7 +501,7 @@ body {
     gap: 32px;
 }
 
-.catalog-form .button {
+.catalog-buttons .button {
     color: #FFFFFF;
     font-family: inherit;
     font-size: 16px;
@@ -448,7 +515,7 @@ body {
     padding: 8px 50px;
 }
 
-.catalog-form .button-reset {
+.catalog-buttons .button-reset {
     background-color: transparent;
 }
 
@@ -457,28 +524,19 @@ body {
     font-size: 18px;
     line-height: 21px;
     font-weight: 400;
-    padding: 14px 131px 14px 20px;
+    padding: 12px 20px;
     border-radius: 4px;
-    border-color: #E5E5E5;
+    border: 2px solid #E5E5E5;
     margin-left: 200px;
     width: 292px;
-}
-
-.catalog-sorting .button {
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 48px;
-    height: 48px;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    border-color: #E5E5E5;
-    box-shadow: none;
+    height: 49px;
 }
 
 .catalog-sorting {
     display: flex;
     margin-left: 70px;
     align-items: center;
+    width: 1060px;
 }
 
 .catalog-view {
@@ -487,83 +545,100 @@ body {
     gap: 8px;
 }
 
+.catalog-view .button {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    border: 2px solid #E5E5E5;
+}
+
+.catalog-view .button-light {
+    border-color: #000000;
+}
+
 .button-cards {
     background-image: url("../images/icons/filter-tabs.svg");
-    background-repeat: no-repeat;
-
 }
 
 .button-full {
     background-image: url("../images/icons/filter-full.svg");
-    background-repeat: no-repeat;
 }
 
 .button-list {
     background-image: url("../images/icons/filter-list.svg");
-    background-repeat: no-repeat;
 }
 
 .product-list {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 0;
+    margin-left: 70px;
+    width: 1060px;
 }
 
 .product-card {
+    width: 340px;
     border: 1px solid #E5E5E5;
+    border-radius: 4px;
     padding: 20px;
-    width: 300px;
 }
 
 .product-title {
     text-transform: none;
 }
 
-.product-card p {
+.product-type,
+.product-price {
     font-size: 18px;
 }
 
 .product-link,
-.product-button {
+.product-button,
+.product-rate {
     font-family: inherit;
+    width: 143px;
     font-size: 16px;
     line-height: 20px;
-    font-weight: 700;
-    color: #ffffff;
     text-transform: uppercase;
     border-radius: 4px;
-    padding: 8px 26px;
+}
+
+.product-link,
+.product-button {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.product-rate {
+    font-weight: 400;
+    color: #333333;
+    background-color: #F2F2F2;
+    border: 1px solid #F2F2F2;
+    padding: 9px 22px 8px 23px;
 }
 
 .product-link {
     background-color: #756157;
     border: 1px solid #756157;
+    padding: 8px 26px;
 }
 
 .product-button {
     background-color: #82B3D3;
     border: 1px solid #82B3D3;
+    padding: 8px 20px;
 }
 
 .product-card .active {
     background-color: #7DB54F;
+    padding: 8px 18px;
 }
 
-p.rate {
-    font-family: inherit;
-    width: 95px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #333333;
-    background-color: #F2F2F2;
-    text-transform: uppercase;
-    border: 1px solid #F2F2F2;
-    border-radius: 4px;
-    padding: 9px 22px 8px 23px;
-}
-
-.stars {
+.product-stars {
     background-image: url("../images/icons/star.svg");
     background-repeat: repeat-x;
     height: 17px;
@@ -584,13 +659,19 @@ p.rate {
 .pagination {
     display: flex;
     gap: 8px;
+    padding: 0;
+    margin-left: 70px;
 }
 
 .pagination-item {
+    width: 60px;
+    height: 60px;
     background-color: #82B3D3;
     border: 1px solid #82B3D3;
     border-radius: 4px;
-    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .pagination-link {
