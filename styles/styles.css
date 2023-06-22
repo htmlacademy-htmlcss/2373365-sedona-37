@@ -73,7 +73,7 @@ body {
 }
 
 .list {
-    list-style: none;
+    list-style-type: none;
 }
 
 .link {
@@ -82,6 +82,7 @@ body {
 
 .navigation {
     display: flex;
+    flex-wrap: wrap;
     width: 1060px;
     margin-left: 70px;
 }
@@ -100,22 +101,28 @@ body {
 }
 
 .navigation-list {
+    margin: 0;
     margin-left: 30px;
-    gap: 32px;
     flex-grow: 1;
+}
+
+.navigation-item {
+    height: 64px;
+}
+
+.navigation-link {
+    display: block;
+    padding: 20px 16px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #000000;
 }
 
 .navigation-user {
     max-width: 400px;
     margin: auto;
     margin-right: 0;
-}
-
-.navigation-link {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: 700;
-    color: #000000;
 }
 
 .navigation-list .active {
@@ -447,6 +454,7 @@ body {
     padding-top: 40px;
     padding-bottom: 30px;
 }
+
 .phone {
     font-size: 40px;
     line-height: 40px;
@@ -456,25 +464,41 @@ body {
 .contacts-list,
 .social-list {
     display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     align-items: center;
 }
 
 .social-list {
-    width: 142px;
+    min-width: 142px;
+    min-height: 40px;
     margin-left: 70px;
-    gap: 27px;
+}
+
+.social-item {
+    min-width: 47px;
+    flex-grow: 1;
+}
+
+.social-link {
+    display: block;
+    height: 40px;
 }
 
 .social-link svg {
-    display: block;
-    align-self: baseline;
+    height: 40px;
+    margin: auto;
 }
 
 .academy-link {
     display: block;
-    height: 34px;
+    height: 40px;
+}
+
+.social-link svg {
+    height: 40px;
+    margin: auto;
 }
 
 .contacts-item:nth-child(even) {
@@ -505,21 +529,26 @@ body {
 .inner-title {
     font-size: 60px;
     line-height: 78px;
+    margin: 0;
+    margin-bottom: 8px;
 }
 
 .breadcrumbs {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
     align-items: baseline;
 }
 
 .breadcrumbs-item:first-child {
-    width: 12px;
-    height: 12px;
+    width: 15px;
+    height: 24px;
     background-repeat: no-repeat;
     background-position: center;
     background-image: url("../images/icons/home.svg");
+    margin-top: auto;
 }
 
 .breadcrumbs-item:first-child::after {
@@ -528,10 +557,17 @@ body {
     background-image: url("../images/icons/arrow.svg");
     background-repeat: no-repeat;
     background-size: auto;
-    background-position: bottom;
-    height: 12px;
+    background-position: center;
+    height: 24px;
     width: 7px;
     margin-left: 24px;
+}
+
+.breadcrumbs-index {
+    display: block;
+    height: 24px;
+    padding: 10px;
+    position: absolute;
 }
 
 .breadcrumbs-link {
@@ -557,6 +593,7 @@ body {
 }
 
 .price-button {
+    margin-top: 36px;
     width: 20px;
     height: 20px;
 }
@@ -567,6 +604,15 @@ body {
     font-weight: 700;
     text-transform: none;
     padding: 0;
+    margin-bottom: 32px;
+}
+
+.catalog-item {
+    margin-bottom: 16px;
+}
+
+.catalog-item:last-child {
+    margin: 0;
 }
 
 .control-input {
@@ -612,6 +658,7 @@ body {
 }
 
 .catalog-buttons {
+    margin-top: 56px;
     display: flex;
     flex-direction: column;
     gap: 32px;
@@ -648,11 +695,16 @@ body {
     height: 49px;
 }
 
+.catalog-products {
+    padding-top: 50px;
+}
+
 .catalog-sorting {
     display: flex;
     margin-left: 70px;
     align-items: center;
     width: 1060px;
+    margin-bottom: 40px;
 }
 
 .catalog-view {
@@ -691,32 +743,44 @@ body {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin: 0;
     padding: 0;
     margin-left: 70px;
     width: 1060px;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 40px;
 }
 
 .product-card {
     width: 340px;
     border: 1px solid #E5E5E5;
     border-radius: 4px;
-    padding: 20px;
+    padding: 19px;
+}
+
+.product-image {
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .product-title {
     text-transform: none;
+    margin: 16px 0;
 }
 
 .product-type,
 .product-price {
     font-size: 18px;
+    margin: 0;
+    margin-bottom: 16px;
 }
 
 .product-link,
 .product-button,
 .product-rate {
     font-family: inherit;
-    width: 143px;
+    min-width: 143px;
     font-size: 16px;
     line-height: 20px;
     text-transform: uppercase;
@@ -774,8 +838,11 @@ body {
 
 .pagination {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     padding: 0;
+    padding-top: 40px;
+    margin: 0;
     margin-left: 70px;
 }
 
@@ -791,6 +858,7 @@ body {
 }
 
 .pagination-link {
+    padding: 12px 25px;
     font-size: 20px;
     line-height: 36px;
     font-weight: 700;
