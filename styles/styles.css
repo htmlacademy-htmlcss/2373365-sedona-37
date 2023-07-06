@@ -825,14 +825,16 @@ body {
     border: 2px solid #E5E5E5;
 }
 
+.catalog-view .button:focus {
+    border: 2px solid #68A2CA;
+}
+
+
 .catalog-view .button:hover,
 .catalog-view .button:active {
     border: 2px solid #000000;
 }
 
-.catalog-view .button:focus {
-    border: 2px solid #68A2CA;
-}
 
 
 .catalog-view .button-light {
