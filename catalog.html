@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <title>HTML Academy: Седона</title>
   </head>
 
@@ -27,7 +29,7 @@
           </ul>
           <ul class="list navigation-user">
             <li>
-              <button class="navigation-search" type="button">
+              <button class="navigation-search" type="button" >
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                   focusable="false" aria-hidden="true">
                   <path
@@ -40,7 +42,7 @@
               </button>
             </li>
             <li>
-              <button class="navigation-favourite" type="button">
+              <button class="navigation-favourite" type="button" >
                 <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"
                   focusable="false" aria-hidden="true">
                   <path
@@ -252,7 +254,8 @@
 
           <ul class="list pagination">
             <li class="pagination-item">
-              <a class="link pagination-link pagination-current"><span class="visually-hidden">Страница </span>1</a>
+              <a class="link pagination-link pagination-current" href="#"><span class="visually-hidden">Страница
+                </span>1</a>
             </li>
             <li class="pagination-item">
               <a class="link pagination-link" href="#"><span class="visually-hidden">Страница </span>2</a>
@@ -384,7 +387,7 @@
     <!-- modal-close -->
     <div class="modal-container modal-close">
       <div class="modal">
-        <button class="close-button">
+        <button class="close-button" type="button">
           <svg width="14" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M14.3928 1.29231L13.1005 0L7.39282 5.70769L1.68513 0L0.392822 1.29231L6.10051 7L0.392822 12.7077L1.68513 14L7.39282 8.29231L13.1005 14L14.3928 12.7077L8.68513 7L14.3928 1.29231Z"
@@ -413,53 +416,46 @@
               <label class="count-label" for="adults">Взрослые:</label>
               <div class="counter">
                 <button class="button count-minus" type="button">
-                  <div class="svg-wrapper">
-                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg"
-                      focusable="false" aria-hidden="true">
-                      <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
-                    </svg>
-                  </div>
+                  <svg class="count-svg" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
+                  </svg>
                   <span class="visually-hidden">Убавить на один</span>
                 </button>
                 <input class="count-input" type="number" id="adults" name="adults" min="0" max="10" value="2">
                 <button class="button count-plus" type="button">
-                  <div class="svg-wrapper">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                      focusable="false" aria-hidden="true">
-                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
-                    </svg>
-                  </div>
+                  <svg class="count-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
+                  </svg>
                   <span class="visually-hidden">Прибавить на один</span>
                 </button>
               </div>
             </div>
             <div class="guests-count kids-count">
               <label class="count-label" for="kids">Дети:</label>
-              <button class="popover-button button-light" type="button">
-                <span class="visually-hidden">Справка</span>
-                <div class="popover-content">
-                  <p class="popover-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18
-                    лет. Дети до 6 лет размещаются бесплатно.</p>
-                </div>
+
+              <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
+                <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые
+                  будут с вами, возраст которых от 6 до 18
+                  лет. Дети до 6 лет размещаются бесплатно.
+                </span>
               </button>
+
               <div class="counter">
                 <button class="button count-minus" type="button">
-                  <div class="svg-wrapper">
-                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg"
-                      focusable="false" aria-hidden="true">
-                      <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
-                    </svg>
-                  </div>
+                  <svg class="count-svg" width="14" height="2" viewBox="0 0 14 2" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
+                  </svg>
                   <span class="visually-hidden">Убавить на один</span>
                 </button>
                 <input class="count-input" type="number" id="kids" name="kids" min="0" max="10" value="2">
                 <button class="button count-plus" type="button">
-                  <div class="svg-wrapper">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                      focusable="false" aria-hidden="true">
-                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
-                    </svg>
-                  </div>
+                  <svg class="count-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                    <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
+                  </svg>
                   <span class="visually-hidden">Прибавить на один</span>
                 </button>
               </div>
