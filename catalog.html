@@ -41,7 +41,8 @@
             </li>
             <li>
               <button class="navigation-favourite" type="button">
-                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+                <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  focusable="false" aria-hidden="true">
                   <path
                     d="M8.9 17C8.6 17 8.3 16.9 8.1 16.6C2.7 10.5 1.4 9.1 1.1 8.7C0.4 7.8 0 6.6 0 5.4C0 2.4 2.4 0 5.5 0C6.8 0 8 0.5 9 1.3C10 0.5 11.3 0 12.5 0C15.5 0 18 2.4 18 5.4C18 6.7 17.5 7.9 16.7 8.8L9.7 16.7C9.5 16.9 9.3 17 8.9 17ZM2.9 7.5C3.2 7.9 6.4 11.5 9 14.4L15.2 7.4C15.7 6.9 15.9 6.2 15.9 5.4C15.9 3.6 14.4 2.1 12.6 2.1C11.6 2.1 10.6 2.6 9.9 3.4C9.6 3.7 9.3 3.8 9 3.8C8.7 3.8 8.4 3.6 8.2 3.4C7.5 2.6 6.5 2.1 5.5 2.1C3.7 2.1 2.2 3.6 2.2 5.4C2.1 6.3 2.5 7 2.9 7.5C2.8 7.5 2.8 7.5 2.9 7.5Z"
                     fill="black" />
@@ -49,6 +50,7 @@
                 <span class="visually-hidden">
                   Избранное
                 </span>
+                <span class="favourite-counter">12</span>
               </button>
             </li>
             <li>
@@ -86,20 +88,23 @@
                 <ul class="list catalog-list">
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="checkbox" name="swimming-pool" checked>
-                      Бассейн
+                      <input class="control-input visually-hidden" type="checkbox" name="swimming-pool" checked>
+                      <span class="control-mark"></span>
+                      <span class="control-label">Бассейн</span>
                     </label>
                   </li>
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="checkbox" name="parking" checked>
-                      Парковка
+                      <input class="control-input visually-hidden" type="checkbox" name="parking" checked>
+                      <span class="control-mark"></span>
+                      <span class="control-label">Парковка</span>
                     </label>
                   </li>
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="checkbox" name="wi-fi">
-                      Wi-Fi
+                      <input class="control-input visually-hidden" type="checkbox" name="wi-fi">
+                      <span class="control-mark"></span>
+                      <span class="control-label">Wi-Fi</span>
                     </label>
                   </li>
                 </ul>
@@ -110,20 +115,24 @@
                 <ul class="list catalog-list">
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="radio" name="product-group" value="hotel" checked>
-                      Гостиница
+                      <input class="control-input visually-hidden" type="radio" name="product-group" value="hotel"
+                        checked>
+                      <span class="control-radio"></span>
+                      <span class="control-label">Гостиница</span>
                     </label>
                   </li>
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="radio" name="product-group" value="motel">
-                      Мотель
+                      <input class="control-input visually-hidden" type="radio" name="product-group" value="motel">
+                      <span class="control-radio"></span>
+                      <span class="control-label">Мотель</span>
                     </label>
                   </li>
                   <li class="catalog-item">
                     <label class="control">
-                      <input class="control-input" type="radio" name="product-group" value="apartments">
-                      Апартаменты
+                      <input class="control-input visually-hidden" type="radio" name="product-group" value="apartments">
+                      <span class="control-radio"></span>
+                      <span class="control-label">Апартаменты</span>
                     </label>
                   </li>
                 </ul>
@@ -131,21 +140,27 @@
 
               <fieldset class="catalog-group price-filter">
                 <legend class="title catalog-title">Стоимость, ₽:</legend>
-                <div class="fieldset-wrapper">
-                  <div class="fieldset-inputs">
-                    <input class="price-from" type="number" placeholder="цена от"
-                      aria-label="введите минимальную стоимость" value="0" step="100" min="0">
-                    <input class="price-to" type="number" placeholder="цена до"
-                      aria-label="введите максимальную стоимость" value="9000" step="100" min="100">
+                <div class="range-wrapper">
+                  <div class="range-inputs">
+                    <label class="range-label">
+                      <input class="range-input price-from" type="number" placeholder="цена" name="min-price" value="0"
+                        step="100" min="0">
+                      <span>от</span>
+                    </label>
+                    <label class="range-label">
+                      <input class="range-input price-to" type="number" placeholder="цена" name="max-price" value="9000"
+                        step="100" min="100">
+                      <span>до</span>
+                    </label>
                   </div>
-                  <div class="price-range">
-                    <button class="button price-button" type="button"><span class="visually-hidden">установить
+                </div>
+                <div class="range-line">
+                  <div class="range-bar" style="left: 10px; width: 206px">
+                    <button class="range-toggle toggle-min" type="button"><span class="visually-hidden">установить
                         минимальную стоимость</span>
                     </button>
-                    <button class="button price-button" type="button"><span class="visually-hidden">установить
+                    <button class="range-toggle toggle-max" type="button"><span class="visually-hidden">установить
                         максимальную стоимость</span>
-                      <span class="range-line"></span>
-                      <span class="range-line"></span>
                     </button>
                   </div>
                 </div>
@@ -259,7 +274,7 @@
         <section class="footer-subscribe">
           <h2 class="title">Подпишитесь на рассылку</h2>
           <p class="text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
-          <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
+          <form class="appointment-mail" action="https://echo.htmlacademy.ru/" method="post">
             <label class="form-label">
               <input type="email" name="E-mail" placeholder="Ваш e-mail">
             </label>
@@ -365,6 +380,96 @@
         </section>
       </footer>
     </div>
+
+    <!-- modal-close -->
+    <div class="modal-container modal-close">
+      <div class="modal">
+        <button class="close-button">
+          <svg width="14" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M14.3928 1.29231L13.1005 0L7.39282 5.70769L1.68513 0L0.392822 1.29231L6.10051 7L0.392822 12.7077L1.68513 14L7.39282 8.29231L13.1005 14L14.3928 12.7077L8.68513 7L14.3928 1.29231Z"
+              fill="black" />
+          </svg>
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+        <section class="modal-content">
+          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+          <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="appointment-date date-in">
+              <label class="date-label" for="date-in">Дата заезда:</label>
+              <input class="date-input" type="text" id="date-in" name="date-in" placeholder="Укажите дату"
+                value="27 апреля 2020">
+              <span class="date-state" id="errorState" style="color: rgb(255, 87, 87);">Мы не можем отправить вас в
+                прошлое.</span>
+            </div>
+            <div class="appointment-date date-out">
+              <label class="date-label" for="date-out">Дата выезда:</label>
+              <input class="date-input" type="text" id="date-out" name="date-out" placeholder="Укажите дату"
+                value="1 сентября 2021">
+              <span class="date-state" id="successState" style="color: rgba(51, 51, 51, 1);">На эти даты есть свободные
+                номера. Пока есть.</span>
+            </div>
+            <div class="guests-count adults-count">
+              <label class="count-label" for="adults">Взрослые:</label>
+              <div class="counter">
+                <button class="button count-minus" type="button">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      focusable="false" aria-hidden="true">
+                      <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
+                    </svg>
+                  </div>
+                  <span class="visually-hidden">Убавить на один</span>
+                </button>
+                <input class="count-input" type="number" id="adults" name="adults" min="0" max="10" value="2">
+                <button class="button count-plus" type="button">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      focusable="false" aria-hidden="true">
+                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
+                    </svg>
+                  </div>
+                  <span class="visually-hidden">Прибавить на один</span>
+                </button>
+              </div>
+            </div>
+            <div class="guests-count kids-count">
+              <label class="count-label" for="kids">Дети:</label>
+              <button class="popover-button button-light" type="button">
+                <span class="visually-hidden">Справка</span>
+                <div class="popover-content">
+                  <p class="popover-text">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18
+                    лет. Дети до 6 лет размещаются бесплатно.</p>
+                </div>
+              </button>
+              <div class="counter">
+                <button class="button count-minus" type="button">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      focusable="false" aria-hidden="true">
+                      <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
+                    </svg>
+                  </div>
+                  <span class="visually-hidden">Убавить на один</span>
+                </button>
+                <input class="count-input" type="number" id="kids" name="kids" min="0" max="10" value="2">
+                <button class="button count-plus" type="button">
+                  <div class="svg-wrapper">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      focusable="false" aria-hidden="true">
+                      <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
+                    </svg>
+                  </div>
+                  <span class="visually-hidden">Прибавить на один</span>
+                </button>
+              </div>
+            </div>
+            <button class="button appointment-submit" type="submit">Найти</button>
+          </form>
+        </section>
+      </div>
+    </div>
+
   </body>
 
 </html>
