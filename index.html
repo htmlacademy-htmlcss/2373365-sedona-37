@@ -11,7 +11,7 @@
 
   <body>
     <div class="page-container">
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <nav class="navigation">
           <a class="logo-link" href="index.html">
             <img class="logo" src="images/logo.svg" width="140" height="70" alt="Логотип города Седона.">
@@ -65,15 +65,15 @@
         </nav>
       </header>
 
-      <main class="main-index">
+      <main class="main-index" data-test="main">
 
-        <section class="hero">
+        <section class="hero" data-test="hero">
           <h1 class="visually-hidden">Добро пожаловать в изумительную Седону "Потому что Большой Каньон - отстой"</h1>
           <img class="hero-logo" src="images/hero-logo.svg" width="458" height="352"
             alt="Баннер добро пожаловать в Седону.">
         </section>
 
-        <section class="advantages">
+        <section class="advantages" data-test="advantages">
           <h2 class="title">Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</h2>
           <p class="text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
           <ul class="list advantages-list">
@@ -113,7 +113,7 @@
           </ul>
         </section>
 
-        <section class="features">
+        <section class="features" data-test="service">
           <h2 class="title">Приезжайте в Седону отдохнуть<br>в комфорте и уюте!</h2>
           <p class="text">Опытный персонал и качественное обслуживание!</p>
           <ul class="list features-list">
@@ -140,26 +140,25 @@
           </ul>
         </section>
 
-        <section class="search-hotel">
+        <section class="search-hotel" data-test="search">
           <h2 class="title">Заинтересовались?</h2>
           <p class="text">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в
             Седоне</p>
           <a class="link search-link" href="catalog.html">Поиск гостиницы в Седоне</a>
         </section>
 
-        <section class="footer-subscribe index-subscribe">
+        <section class="footer-subscribe index-subscribe" data-test="subscribe">
           <h2 class="title">Подпишитесь на рассылку</h2>
           <p class="text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="appointment-mail" action="https://echo.htmlacademy.ru/" method="post">
-            <label class="form-label" for="E-mail">
-              <input type="text" id="E-mail" name="E-mail" placeholder="Ваш e-mail">
-            </label>
+            <label class="form-label visually-hidden" for="E-mail">Ваш e-mail</label>
+            <input class="form-input" type="email" name="E-mail" placeholder="Ваш e-mail" id="E-mail">
             <button class="button" type="submit">Подписаться</button>
           </form>
         </section>
 
       </main>
-      <footer class="footer-index">
+      <footer class="footer-index" data-test="footer">
         <section class="footer-contacts">
           <ul class="list contacts-list">
             <li class="contacts-item">
