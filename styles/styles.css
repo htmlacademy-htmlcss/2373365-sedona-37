@@ -766,7 +766,7 @@ body {
     opacity: 0.3;
 }
 
-.control-input:active + span {
+.control-input:checked + span {
     outline: 2px solid #83B3D3;
 }
 
