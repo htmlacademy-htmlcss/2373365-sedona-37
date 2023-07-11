@@ -660,6 +660,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-position-y: center;
+    background-size: 12px 12px;
     background-image: url("../images/icons/home.svg");
     margin-top: auto;
 }
@@ -669,11 +670,11 @@ body {
     display: block;
     background-image: url("../images/icons/arrow.svg");
     background-repeat: no-repeat;
-    background-size: 12px 12px;
+    background-size: 7px 10px;
     background-position: center;
     position: absolute;
-    height: 22px;
-    width: 7px;
+    height: 21px;
+    width: 8px;
     left: -17px;
 }
 
@@ -765,7 +766,7 @@ body {
     opacity: 0.3;
 }
 
-.control-input:checked + span {
+.control-input:active + span {
     outline: 2px solid #83B3D3;
 }
 
@@ -1058,6 +1059,7 @@ body {
     grid-template-rows: repeat(5, min-content);
     gap: 16px 20px;
     border-radius: 4px;
+    outline: 1px solid #E6E6E6;
     padding: 20px;
 }
 
