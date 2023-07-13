@@ -12,20 +12,20 @@
 
   <body>
     <div class="page-container">
-      <header class="page-header">
+      <header class="page-header" data-test="header">
         <nav class="navigation">
           <a class="logo-link" href="index.html">
             <img class="logo" src="images/logo.svg" width="140" height="70" alt="Логотип города Седона.">
           </a>
           <ul class="list navigation-list">
             <li class="navigation-item">
-              <a class="link navigation-link" href="index.html">Главная</a>
+              <a class="link navigation-link active" href="#">Главная</a>
             </li>
             <li class="navigation-item">
               <a class="link navigation-link" href="#">О Седоне</a>
             </li>
             <li class="navigation-item">
-              <a class="link navigation-link active" href="#">Гостиницы</a>
+              <a class="link navigation-link" href="catalog.html">Гостиницы</a>
             </li>
           </ul>
           <ul class="list navigation-user">
@@ -57,225 +57,100 @@
               </button>
             </li>
             <li>
-              <button class="navigation-button" type="button">Хочу сюда!</button>
-              <span class="visually-hidden">
-                Бронирование
-              </span>
+              <a class="navigation-button link" href="modal.html">
+                Хочу сюда!
+                <span class="visually-hidden">
+                  Бронирование
+                </span>
+              </a>
             </li>
           </ul>
         </nav>
       </header>
 
-      <main class="main-inner">
-        <div class="header-container">
-          <header class="inner-header">
-            <h1 class="inner-title">Гостиницы Седоны</h1>
-            <ul class="list breadcrumbs">
-              <li class="breadcrumbs-item">
-                <a class="link breadcrumbs-index" href="index.html">
-                  <span class="visually-hidden">
-                    Главная
-                  </span></a>
-              </li>
-              <li class="breadcrumbs-item">
-                <a class="link breadcrumbs-link" href="#">Гостиницы</a>
-              </li>
-            </ul>
-          </header>
+      <main class="main-index" data-test="main">
 
-          <section class="catalog-filter">
-            <h2 class="visually-hidden">Фильтр для поиска гостиниц</h2>
-            <form class="form catalog-form" action="https://echo.htmlacademy.ru/" method="get">
-              <fieldset class="catalog-group">
-                <legend class="title catalog-title">Инфраструктура:</legend>
-                <ul class="list catalog-list">
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="swimming-pool" checked>
-                      <span class="control-mark"></span>
-                      <span class="control-label">Бассейн</span>
-                    </label>
-                  </li>
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="parking" checked>
-                      <span class="control-mark"></span>
-                      <span class="control-label">Парковка</span>
-                    </label>
-                  </li>
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="wi-fi">
-                      <span class="control-mark"></span>
-                      <span class="control-label">Wi-Fi</span>
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
+        <section class="hero" data-test="hero">
+          <h1 class="visually-hidden">Добро пожаловать в изумительную Седону "Потому что Большой Каньон - отстой"</h1>
+          <img class="hero-logo" src="images/hero-logo.svg" width="458" height="352"
+            alt="Баннер добро пожаловать в Седону.">
+        </section>
 
-              <fieldset class="catalog-group">
-                <legend class="title catalog-title">Тип Жилья:</legend>
-                <ul class="list catalog-list">
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="radio" name="product-group" value="hotel"
-                        checked>
-                      <span class="control-radio"></span>
-                      <span class="control-label">Гостиница</span>
-                    </label>
-                  </li>
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="radio" name="product-group" value="motel">
-                      <span class="control-radio"></span>
-                      <span class="control-label">Мотель</span>
-                    </label>
-                  </li>
-                  <li class="catalog-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="radio" name="product-group" value="apartments">
-                      <span class="control-radio"></span>
-                      <span class="control-label">Апартаменты</span>
-                    </label>
-                  </li>
-                </ul>
-              </fieldset>
-
-              <fieldset class="catalog-group price-filter">
-                <legend class="title catalog-title">Стоимость, ₽:</legend>
-                <div class="range-wrapper">
-                  <div class="range-inputs">
-                    <label class="range-label">
-                      <input class="range-input price-from" type="number" placeholder="цена" name="min-price" value="0"
-                        step="100" min="0">
-                      <span>от</span>
-                    </label>
-                    <label class="range-label">
-                      <input class="range-input price-to" type="number" placeholder="цена" name="max-price" value="9000"
-                        step="100" min="100">
-                      <span>до</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="range-line">
-                  <div class="range-bar" style="left: 10px; width: 206px">
-                    <button class="range-toggle toggle-min" type="button"><span class="visually-hidden">установить
-                        минимальную стоимость</span>
-                    </button>
-                    <button class="range-toggle toggle-max" type="button"><span class="visually-hidden">установить
-                        максимальную стоимость</span>
-                    </button>
-                  </div>
-                </div>
-              </fieldset>
-
-              <div class="catalog-buttons">
-                <button class="button button-submit" type="submit">Применить</button>
-                <button class="button button-reset" type="reset">Сбросить</button>
+        <section class="advantages" data-test="advantages">
+          <h2 class="title">Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</h2>
+          <p class="text">Рассмотрим причины, по которым Седона круче, чем Гранд-Каньон!</p>
+          <ul class="list advantages-list">
+            <li class="advantages-item">
+              <div class="advantages-content">
+                <h3 class="subtitle">Настоящий городок</h3>
+                <p class="advantages-description">Седона — не аттракцион для туристов, там течёт своя жизнь</p>
               </div>
-            </form>
-          </section>
-        </div>
-
-        <section class="catalog-products">
-          <div class="catalog-sorting">
-            <h2 class="title catalog-title">Найдено гостиниц: <output>38</output></h2>
-            <select class="select-control" aria-label="Сортировка">
-              <option value="cheap" selected>Сначала дешёвое</option>
-              <option value="popular">Сначала популярное</option>
-              <option value="expensive">Сначала дорогое</option>
-            </select>
-            <div class="catalog-view">
-              <button class="button button-cards button-light" type="button">
-                <span class="visually-hidden">Показать карточки</span>
-              </button>
-              <button class="button button-full" type="button">
-                <span class="visually-hidden">Показать крупно</span>
-              </button>
-              <button class="button button-list" type="button">
-                <span class="visually-hidden">Показать список</span>
-              </button>
-            </div>
-          </div>
-
-          <ul class="list product-list">
-            <li class="product-card">
-              <img class="product-image" src="images/hotel-1.jpg" width="300" height="212"
-                alt="Вид на ночное небо из пещеры.">
-              <h3 class="subtitle product-title">Amara Resort & Spa</h3>
-              <p class="product-type">Гостиница</p>
-              <p class="product-price">От 4000 ₽</p>
-              <a class="link product-link" href="#">Подробнее</a>
-              <button class="product-button" type="button">В избранное</button>
-              <p class="product-stars star-4">
-                <span class="visually-hidden">4 звезды</span>
-              </p>
-              <p class="product-rate">Рейтинг: 8,5</p>
+              <img src="images/advantages-houses.jpg" height="385" width="800" alt="Домики на фоне гор.">
             </li>
-            <li class="product-card">
-              <img class="product-image" src="images/hotel-2.jpg" width="300" height="212"
-                alt="Вид на ночное небо и скалу.">
-              <h3 class="subtitle product-title">Villas at Poco Diablo</h3>
-              <p class="product-type">Гостиница</p>
-              <p class="product-price">От 5000 ₽</p>
-              <a class="link product-link" href="#">Подробнее</a>
-              <button class="product-button active" type="button">В избранном</button>
-              <p class="product-stars star-4">
-                <span class="visually-hidden">4 звезды</span>
-              </p>
-              <p class="product-rate">Рейтинг: 9,2</p>
+            <li class="advantages-item">
+              <div class="advantages-content">
+                <h3 class="subtitle">Небольшая площадь</h3>
+                <p class="advantages-description">Все достопримечательности находятся очень близко</p>
+              </div>
             </li>
-            <li class="product-card">
-              <img class="product-image" src="images/hotel-3.jpg" width="300" height="212"
-                alt="Вид на дневное небо и гору.">
-              <h3 class="subtitle product-title">Desert Quail Inn</h3>
-              <p class="product-type">Гостиница</p>
-              <p class="product-price">От 2500 ₽</p>
-              <a class="link product-link" href="#">Подробнее</a>
-              <button class="product-button" type="button">В избранное</button>
-              <p class="product-stars star-3">
-                <span class="visually-hidden">3 звезды</span>
-              </p>
-              <p class="product-rate">Рейтинг: 6,9</p>
+            <li class="advantages-item">
+              <div class="advantages-content">
+                <h3 class="subtitle">Красивая дорога</h3>
+                <p class="advantages-description">Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+              </div>
             </li>
-            <li class="product-card">
-              <img class="product-image" src="images/hotel-4.jpg" width="300" height="212"
-                alt="Вид на небо и скалу на рассвете.">
-              <h3 class="subtitle product-title">GreenTree Inn</h3>
-              <p class="product-type">Гостиница</p>
-              <p class="product-price">От 1500 ₽</p>
-              <a class="link product-link" href="#">Подробнее</a>
-              <button class="product-button" type="button">В избранное</button>
-              <p class="product-stars star-2">
-                <span class="visually-hidden">2 звезды</span>
-              </p>
-              <p class="product-rate">Рейтинг: 5,0</p>
+            <li class="advantages-item">
+              <div class="advantages-content">
+                <h3 class="subtitle">Мало туристов</h3>
+                <p class="advantages-description">Большинство едет в Гранд Каньон и толпится там
+                </p>
+              </div>
             </li>
-          </ul>
-
-          <ul class="list pagination">
-            <li class="pagination-item">
-              <a class="link pagination-link pagination-current" href="#"><span class="visually-hidden">Страница
-                </span>1</a>
-            </li>
-            <li class="pagination-item">
-              <a class="link pagination-link" href="#"><span class="visually-hidden">Страница </span>2</a>
-            </li>
-            <li class="pagination-item">
-              <a class="link pagination-link" href="#"><span class="visually-hidden">Страница </span>3</a>
-            </li>
-            <li class="pagination-item">
-              <a class="link pagination-link" href="#"><span class="visually-hidden">Страница </span>4</a>
-            </li>
-            <li class="pagination-item">
-              <span>...</span>
-            </li>
-            <li class="pagination-item">
-              <a class="link pagination-link" href="#"><span class="visually-hidden">Страница </span>10</a>
+            <li class="advantages-item">
+              <div class="advantages-content">
+                <h3 class="subtitle">Там есть<br> мост дьявола</h3>
+                <p class="advantages-description">Да, по нему можно пройти! Если вы осмелитесь, разумеется</p>
+              </div>
+              <img src="images/advantages-bridge.jpg" width="800" height="385" alt="Вид на мост дъявола в Седоне.">
             </li>
           </ul>
         </section>
-        <section class="footer-subscribe">
+
+        <section class="features" data-test="service">
+          <h2 class="title">Приезжайте в Седону отдохнуть<br>в комфорте и уюте!</h2>
+          <p class="text">Опытный персонал и качественное обслуживание!</p>
+          <ul class="list features-list">
+            <li class="features-item">
+              <div class="features-content features-living">
+                <h3 class="subtitle">Жильё</h3>
+                <p class="features-description">Рекомендуем пожить<br> в настоящем мотеле,<br> всё как в кино!</p>
+              </div>
+            </li>
+            <li class="features-item">
+              <div class="features-content features-food">
+                <h3 class="subtitle">Еда</h3>
+                <p class="features-description">Всегда заказывайте<br> топовый фирменный бургер,<br> вы не
+                  разочаруетесь!
+                </p>
+              </div>
+            </li>
+            <li class="features-item">
+              <div class="features-content features-gift">
+                <h3 class="subtitle">Сувениры</h3>
+                <p class="features-description">Не только китайского,<br> но и настоящего местного производства!</p>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="search-hotel" data-test="search">
+          <h2 class="title">Заинтересовались?</h2>
+          <p class="text">Укажите предполагаемые даты поездки,<br> и мы покажем вам лучшие предложения гостиниц в
+            Седоне</p>
+          <a class="link search-link" href="catalog.html">Поиск гостиницы в Седоне</a>
+        </section>
+
+        <section class="footer-subscribe index-subscribe" data-test="subscribe">
           <h2 class="title">Подпишитесь на рассылку</h2>
           <p class="text">Только полезная информация и никакого спама,<br> честное бойскаутское!</p>
           <form class="appointment-mail" action="https://echo.htmlacademy.ru/" method="post">
@@ -284,10 +159,12 @@
             <button class="button" type="submit">Подписаться</button>
           </form>
         </section>
-      </main>
 
-      <footer class="footer-inner">
+      </main>
+      <footer class="footer-index" data-test="footer">
+
         <section class="footer-contacts">
+          <h2 class="visually-hidden">Контакты</h2>
           <ul class="list contacts-list">
             <li class="contacts-item">
               <ul class="list social-list">
@@ -384,9 +261,9 @@
       </footer>
     </div>
 
-    <!-- modal -->
+    <!-- modal-close -->
     <div class="modal-container">
-      <div class="modal" data-test="modal">
+      <div class="modal">
         <button class="close-button" type="button">
           <svg width="14" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -465,7 +342,6 @@
         </section>
       </div>
     </div>
-
   </body>
 
 </html>
