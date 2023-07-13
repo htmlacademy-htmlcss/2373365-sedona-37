@@ -56,10 +56,12 @@
               </button>
             </li>
             <li>
-              <button class="navigation-button" type="button">Хочу сюда!</button>
-              <span class="visually-hidden">
-                Бронирование
-              </span>
+              <a class="navigation-button link" href="modal.html">
+                Хочу сюда!
+                <span class="visually-hidden">
+                  Бронирование
+                </span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -286,7 +288,9 @@
       </main>
 
       <footer class="footer-inner" data-test="footer">
+
         <section class="footer-contacts">
+          <h2 class="visually-hidden">Контакты</h2>
           <ul class="list contacts-list">
             <li class="contacts-item">
               <ul class="list social-list">
@@ -383,87 +387,7 @@
       </footer>
     </div>
 
-    <!-- modal-close -->
-    <div class="modal-container modal-close">
-      <div class="modal">
-        <button class="close-button" type="button">
-          <svg width="14" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M14.3928 1.29231L13.1005 0L7.39282 5.70769L1.68513 0L0.392822 1.29231L6.10051 7L0.392822 12.7077L1.68513 14L7.39282 8.29231L13.1005 14L14.3928 12.7077L8.68513 7L14.3928 1.29231Z"
-              fill="black" />
-          </svg>
-          <span class="visually-hidden">Закрыть</span>
-        </button>
-        <section class="modal-content">
-          <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
-          <form class="appointment-form" action="https://echo.htmlacademy.ru/" method="post">
-            <div class="appointment-date date-in">
-              <label class="date-label" for="date-in">Дата заезда:</label>
-              <input class="date-input" type="text" id="date-in" name="date-in" placeholder="Укажите дату"
-                value="27 апреля 2020">
-              <span class="date-state" id="errorState" style="color: rgb(255, 87, 87);">Мы не можем отправить вас в
-                прошлое.</span>
-            </div>
-            <div class="appointment-date date-out">
-              <label class="date-label" for="date-out">Дата выезда:</label>
-              <input class="date-input" type="text" id="date-out" name="date-out" placeholder="Укажите дату"
-                value="1 сентября 2021">
-              <span class="date-state" id="successState" style="color: rgba(51, 51, 51, 1);">На эти даты есть свободные
-                номера. Пока есть.</span>
-            </div>
-            <div class="guests-count adults-count">
-              <label class="count-label" for="adults">Взрослые:</label>
-              <div class="counter">
-                <button class="button count-minus" type="button">
-                  <svg class="count-svg" width="14" height="2" viewBox="0 0 14 2" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-                    <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
-                  </svg>
-                  <span class="visually-hidden">Убавить на один</span>
-                </button>
-                <input class="count-input" type="number" id="adults" name="adults" min="0" max="10" value="2">
-                <button class="button count-plus" type="button">
-                  <svg class="count-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-                    <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
-                  </svg>
-                  <span class="visually-hidden">Прибавить на один</span>
-                </button>
-              </div>
-            </div>
-            <div class="guests-count kids-count">
-              <label class="count-label" for="kids">Дети:</label>
 
-              <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label-date">
-                <span class="tooltip-text" role="tooltip" id="tooltip-label-date">Укажите количество детей, которые
-                  будут с вами, возраст которых от 6 до 18
-                  лет. Дети до 6 лет размещаются бесплатно.
-                </span>
-              </button>
-
-              <div class="counter">
-                <button class="button count-minus" type="button">
-                  <svg class="count-svg" width="14" height="2" viewBox="0 0 14 2" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-                    <path d="M0.392822 0L0.392822 2L14.3928 2V0L0.392822 0Z" fill="black" />
-                  </svg>
-                  <span class="visually-hidden">Убавить на один</span>
-                </button>
-                <input class="count-input" type="number" id="kids" name="kids" min="0" max="10" value="2">
-                <button class="button count-plus" type="button">
-                  <svg class="count-svg" width="14" height="14" viewBox="0 0 14 14" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
-                    <path d="M14 6H8V0H6V6H0V8H6V14H8V8H14V6Z" fill="black" />
-                  </svg>
-                  <span class="visually-hidden">Прибавить на один</span>
-                </button>
-              </div>
-            </div>
-            <button class="button appointment-submit" type="submit">Найти</button>
-          </form>
-        </section>
-      </div>
-    </div>
 
   </body>
 
