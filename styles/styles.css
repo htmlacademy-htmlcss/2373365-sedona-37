@@ -886,7 +886,7 @@ body {
     font-weight: 700;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+
     padding: 12px 20px;
     padding-right: 40px;
     width: 143px;
@@ -958,6 +958,7 @@ body {
 
 .select-control {
     font-family: inherit;
+    color: #333333;
     font-size: 18px;
     line-height: 21px;
     font-weight: 400;
