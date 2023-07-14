@@ -96,49 +96,63 @@ body {
     flex-wrap: wrap;
     width: 1060px;
     position: relative;
+    align-items: center;
     z-index: 1;
     min-height: 64px;
+    margin-bottom: -6px;
+}
+
+.logo-link {
+    align-self: flex-start;
     margin-bottom: -6px;
 }
 
 .logo {
     object-fit: contain;
     height: 70px;
-    width: 138px;
-    margin-bottom: -6px;
+    width: 140px;
 }
 
 .navigation .list {
     display: flex;
-    align-items: start;
+    align-items: center;
     flex-wrap: wrap;
-    padding: 0;
-}
-
-.navigation-list {
-    margin-left: 30px;
-    max-width: 500px;
-    justify-content: start;
     margin-bottom: 6px;
 }
 
+.navigation-list {
+    margin-left: 28px;
+    max-width: 500px;
+    justify-content: start;
+}
+
+.navigation-item:nth-child(1) {
+    min-width: 100px;
+}
+
+.navigation-item:nth-child(2) {
+    min-width: 114px;
+}
+
+.navigation-item:nth-child(3) {
+    min-width: 125px;
+}
+
 .navigation-item {
-    height: 64px;
+    display: flex;
 }
 
 .navigation-link {
-    display: block;
-    padding: 20px 16px;
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
     color: #000000;
+    padding: 20px 16px;
 }
 
 .navigation-user {
     max-width: 350px;
     margin-left: auto;
-    margin-bottom: 6px;
 }
 
 .navigation-list .active {
@@ -186,7 +200,6 @@ body {
     display: block;
     min-width: 160px;
     height: 36px;
-    margin-top: 14px;
     margin-left: 20px;
     font-size: 16px;
     line-height: 20px;
@@ -430,7 +443,7 @@ body {
     margin: auto;
     padding: 8px 50px;
     max-width: 592px;
-    min-width: 376px;
+    min-width: max-content;
 }
 
 .footer-subscribe .title {
@@ -441,6 +454,7 @@ body {
     margin: auto;
     margin-bottom: 54px;
     min-width: 475px;
+    max-width: 500px;
 }
 
 .footer-subscribe {
@@ -479,19 +493,19 @@ body {
     color: #ffffff;
     background-color: #82B3D3;
     border-radius: 0 4px 4px 0;
+    max-height: 100%;
 }
 
 .form-input {
     font-family: inherit;
     width: 452px;
-    height: 100%;
+    max-height: 100%;
     font-size: 18px;
     line-height: 24px;
     padding: 14px 20px;
     background-color: #F2F2F2;
     border-radius: 4px 0 0 4px;
     border-style: none;
-    min-height: 52px;
 }
 
 .form-input:disabled,
@@ -548,7 +562,7 @@ body {
     line-height: 40px;
     color: #000000;
     min-width: 331px;
-
+    text-align: center;
 }
 
 .social-list {
@@ -734,6 +748,7 @@ body {
 }
 
 .control {
+    display: flex;
     font-size: 18px;
     line-height: 23px;
     font-weight: 400;
@@ -962,7 +977,7 @@ body {
     font-size: 18px;
     line-height: 21px;
     font-weight: 400;
-    padding: 12px 20px;
+    padding: 12px 19px;
     border-radius: 4px;
     border: 2px solid #E5E5E5;
     margin-left: auto;
@@ -1007,6 +1022,7 @@ body {
 .catalog-view {
     display: flex;
     margin-left: 70px;
+    align-items: flex-start;
     flex-wrap: wrap;
     max-width: 160px;
     gap: 8px;
@@ -1021,6 +1037,7 @@ body {
     border-radius: 4px;
     background-color: #FFFFFF;
     border: 2px solid #E5E5E5;
+    padding: 0;
 }
 
 
@@ -1416,6 +1433,13 @@ body {
     margin-top: 25px;
 }
 
+.date-input {
+    background-image: url("../images/icons/calendar.svg");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: right 22px top 16px;
+}
+
 .date-input,
 .count-input {
     padding: 12px 20px;
@@ -1455,10 +1479,15 @@ body {
 }
 
 .count-input {
-    padding: 14px 10px;
+    padding: 12px 10px;
     width: 31px;
     text-align: center;
     border-radius: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
 }
 
 .counter .button {
