@@ -52,7 +52,7 @@ body {
   width: 1200px;
   margin: 0 auto;
   background-color: #ffffff;
-  box-shadow: 0 0 15px #00000033;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .visually-hidden {
@@ -324,10 +324,6 @@ body {
   padding: 102px 85px;
 }
 
-.features-content {
-  padding: 81px 85px;
-}
-
 .advantages-content .subtitle {
   margin: 0 auto;
   width: 175px;
@@ -346,16 +342,16 @@ body {
 }
 
 .advantages-description::before {
-  content: '';
+  content: "";
   display: block;
   height: 2px;
   width: 60px;
   margin: 30px auto;
-  background-color: #0000004d;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .advantages-item:nth-child(4n+1) .advantages-description::before {
-  background-color: #ffffff4d;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .advantages-item:nth-child(4n+1) {
@@ -375,11 +371,11 @@ body {
 
 .advantages-item:nth-child(even),
 .features-item:nth-child(odd) {
-  background-color: #83b3d31f;
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
 .advantages-item:nth-child(3) {
-  background-color: #83b3d333;
+  background-color: rgba(131, 179, 211, 0.2);
 }
 
 .features .title {
@@ -396,6 +392,7 @@ body {
   background-repeat: no-repeat;
   background-position: center 81px;
   background-size: 75px 72px;
+  padding: 81px 85px;
 }
 
 .features-living {
@@ -516,8 +513,8 @@ body {
 .date-input:disabled,
 .count-input:disabled,
 .close-button:disabled {
-  outline: 3px solid #0000004d;
-  color: #0000004d;
+  outline: 3px solid rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.3);
   outline-offset: -3px;
 }
 
@@ -534,7 +531,7 @@ body {
 .form-input:hover:not(:disabled),
 .range-inputs input:hover:not(:disabled),
 .date-input:hover:not(:disabled) {
-  background-color: #e6e6e6
+  background-color: #e6e6e6;
 }
 
 .footer-contacts {
@@ -594,7 +591,7 @@ body {
 .search-svg path,
 .favourite-svg path,
 .count-svg path,
-.close-button path   {
+.close-button path {
   fill: currentColor;
 }
 
@@ -605,7 +602,7 @@ body {
 
 .social-link:active {
   outline: none;
-  color: #68a2ca4d;
+  color: rgba(104, 162, 202, 0.3);
 }
 
 .academy-link,
@@ -638,7 +635,7 @@ body {
 .navigation-search:active:not(:disabled),
 .navigation-favourite:active:not(:disabled) {
   outline: none;
-  color: #7561574d;
+  color: rgba(117, 97, 87, 0.3);
 }
 
 .header-container {
@@ -855,7 +852,7 @@ body {
 }
 
 .price-filter {
-  margin-left: auto
+  margin-left: auto;
 }
 
 .range-wrapper {
@@ -875,7 +872,7 @@ body {
 
 .range-label span {
   position: absolute;
-  color: #0000004d;
+  color: rgba(0, 0, 0, 0.3);
   font-size: 18px;
   right: 20px;
 }
@@ -913,7 +910,7 @@ body {
 .range-line {
   position: relative;
   height: 4px;
-  background-color: #ffffff4d;
+  background-color: rgba(255, 255, 255, 0.3);
   margin-top: 44px;
 }
 
@@ -1291,7 +1288,7 @@ body {
 .navigation-button:active:not(:disabled),
 .search-link:active {
   outline: none;
-  color: #ffffff4d;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .navigation-button:active:not(:disabled),
@@ -1315,7 +1312,7 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color: #f2f2f2cc;
+  background-color: rgba(242, 242, 242, 0.8);
 }
 
 .modal-close {
@@ -1327,7 +1324,7 @@ body {
   margin: auto;
   padding: 64px 70px;
   background-color: #ffffff;
-  box-shadow: 0 25px 50px #00000026;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   min-width: 717px;
   max-width: 800px;
@@ -1357,7 +1354,7 @@ body {
 }
 
 .close-button:active:not(:disabled) {
-  color: #0000004d;
+  color: rgba(0, 0, 0, 0.3);
   background-color: #e6e6e6;
   outline: none;
 }
@@ -1439,12 +1436,12 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
-  color: #00000099;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .date-input:hover:not(:disabled),
 .count-input:hover:not(:disabled) {
-  color: #00000099;
+  color: rgba(0, 0, 0, 0.6);
   background-color: #e6e6e6;
 }
 
@@ -1487,7 +1484,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7561574d;
+  color: rgba(117, 97, 87, 0.3);
 }
 
 .count-minus {
@@ -1519,7 +1516,7 @@ body {
 }
 
 .button:active:not(:disabled) .count-svg {
-  color: #0000004d;
+  color: rgba(0, 0, 0, 0.3);
   outline: none;
 }
 
@@ -1554,7 +1551,7 @@ body {
   min-height: 143px;
   padding: 21px;
   background-color: #333333;
-  box-shadow: 0 15px 30px #0000004d;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   font-family: inherit;
   font-size: 16px;
@@ -1579,7 +1576,7 @@ body {
 
 .tooltip-toggle:focus-visible,
 .tooltip-toggle:hover:not(:disabled) {
-  background-color: #68a2ca
+  background-color: #68a2ca;
 }
 
 .tooltip-toggle:hover:not(:disabled) .tooltip-text,
